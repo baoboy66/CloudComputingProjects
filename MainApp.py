@@ -33,4 +33,8 @@ def addData():
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
+    
+@app.errorHandler(404)
+def not_found(error):
+    return make_response(jsonify ( {'error': 'Bad Request'}),404)
 
