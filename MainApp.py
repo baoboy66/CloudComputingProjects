@@ -12,7 +12,7 @@ def getDates():
     data = []
     globalData = getData()
     for row in globalData:
-        temp = {'DATE':row[0]}
+        temp = {'DATE':row['DATE']}
         data.append(temp)
     return jsonify(data)
 
