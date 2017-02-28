@@ -30,7 +30,7 @@ def forecast():
     return "FORECAST DATA"
 
 def loadData():
-    f = open('daily.csv')
+    f = open('daily.csv','rt')
     reader = csv.reader(f)
     for row in reader:
         print row
