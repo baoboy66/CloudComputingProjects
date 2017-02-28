@@ -8,7 +8,6 @@ def main():
 
 @app.route("/historical", methods=['GET'])
 def getDates():
-    s = ""
     import csv
     f = open('daily.csv','rb')
     reader = csv.reader(f)
