@@ -39,6 +39,7 @@ def addData():
         data = []
         f = open('daily.csv','rb')
         reader = csv.reader(f)
+        temp = {'DATE':request_data['DATE'],'TMAX':request_data['TMAX'],'TMIN':request_data['TMIN']}
         data.append(request_data)
         for row in reader:
             data.append(row)
