@@ -23,11 +23,12 @@ def getInfo(date):
         for row in globalData:
             if row['DATE'] == date:
                 return jsonify(row)
+        return abort(404, {'message': 'Unable to complete request: '+date+' doesn't exist'})
     elif request.method == 'DELETE':
         result = deleteRow(date)
         if result:
             return result
-    return abort(404)
+        return abort(404, {'message': 'Unable to complete request: Can't delete non existing item.'})
 
 
 @app.route("/historical", methods=['POST'])
@@ -72,8 +73,3 @@ def deleteRow(date):
     f2.close
     return "Delete Successfully"
     
-'''    
-@app.errorHandler(404)
-def not_found(error):
-    return make_response(jsonify ( {'error': 'Bad Request'}),404)
-'''
