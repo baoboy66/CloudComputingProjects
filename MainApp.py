@@ -22,9 +22,12 @@ def getDates():
     return jsonify(data)
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
-def getInfo():
+def getInfo(date):
     if request.method == 'GET':
-        return "Get Info"
+        data = getData()
+        for i in data:
+            if i[0] == date:
+                return ['DATE':i[0], 'TMAX':i[1], 'TMIN':i[2]]
     elif request.method == 'DELETE':
         return "Delete Info"
     return "NONE"
@@ -39,6 +42,19 @@ def addData():
 def forecast():
     return "FORECAST DATA"
 
+def getData():
+        import csv
+    f = open('daily.csv','rb')
+    reader = csv.reader(f)
+    data = []
+    firstLine = True
+    for row in reader:
+        if firstLine :
+            firstLine = False
+            continue
+        data.append(row)
+    return data
+    
 '''    
 @app.errorHandler(404)
 def not_found(error):
