@@ -36,7 +36,6 @@ def addData():
     globalData.append(newData)
     return jsonify(globalData)
 
-
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
@@ -63,9 +62,9 @@ def deleteRow(date)
     f = open('daily.csv','rb')
     reader = csv.reader(f)
     for row in reader:
-        if row[0] == date
+        if row[0] == date:
             continue
-        data.append(temp)
+        data.append(row)
     f.close()
     f2 = open(file.csv, 'wb')
     writer = csv.writer(f2)
