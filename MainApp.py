@@ -49,20 +49,6 @@ def addData():
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
-
-def getData():
-        import csv
-    f = open('daily.csv','rb')
-    reader = csv.reader(f)
-    data = []
-    firstLine = True
-    for row in reader:
-        if firstLine :
-            firstLine = False
-            continue
-        temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]])
-        data.append(temp)
-    return jsonify(data)
     
 '''    
 @app.errorHandler(404)
