@@ -56,7 +56,7 @@ def getData():
         data.append(temp)
     return data
 
-def deleteRow(date)
+def deleteRow(date):
     import csv
     data = []
     f = open('daily.csv','rb')
