@@ -36,7 +36,9 @@ def getInfo(date):
 
 @app.route("/historical", methods=['POST'])
 def addData():
-    return "POST ADD DATA"
+    newData = request.data
+    globalData.append(newData)
+    return jsonify(globalData)
 
 
 @app.route("/forecast/<date>", methods=['GET'])
