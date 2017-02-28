@@ -1,4 +1,4 @@
-from flask import Flask, #request, CSV
+from flask import Flask, CSV, request
 
 app = Flask(__name__)
 
@@ -8,26 +8,36 @@ def main():
 
 @app.route("/historical", methods=['GET'])
 def getDates():
+    loadData()
     return "Dates"
 
-@app.route("historical/<date>", methods=['GET'])
+@app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo():
-    return "GET INFO"
+    if request.method == 'GET':
+        return "Get Info"
+    elif request.method == 'DELETE':
+        return "Delete Info"
+    return "NONE"
 
 
 @app.route("/historical", methods=['POST'])
 def addData():
     return "POST ADD DATA"
 
-@app.route("historical/<date>", methods=['DELETE'])
-def deleteData():
-    return "DELETE DATA"
 
-@app.route("forecast/<date>", methods=['GET'])
+@app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
 
 def loadData():
     f = open('daily.csv')
-    #csv.reader(f)
+    reader = csv.reader(f)
+    for row in reader:
+        print row
     f.close()
+
+if __name__ == '__main__':
+    app.run(
+        host = '0.0.0.0',
+        port = 80
+    )
