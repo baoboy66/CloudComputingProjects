@@ -50,7 +50,7 @@ def addData():
         writer.writerows(data)
         f2.close
         return "Update Successfully"
-    return abort(404, {'message': 'Unable to update info: item does not exist'}
+    return abort(404, {'message': 'Unable to update info: item does not exist'})
 
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
