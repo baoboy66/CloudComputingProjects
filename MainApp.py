@@ -10,7 +10,7 @@ def main():
 def getDates():
     s = ""
     f = open('daily.csv','rb')
-    reader = CSV.reader(f)
+    reader = csv.reader(f)
     for row in reader:
         s += str(row)
     return s
