@@ -39,10 +39,10 @@ def addData():
         data = []
         f = open('daily.csv','rb')
         reader = csv.reader(f)
-        #temp = {'DATE':request_data['DATE'],'TMAX':request_data['TMAX'],'TMIN':request_data['TMIN']}
-        data.append(request_data)
+        temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
         for row in reader:
             data.append(row)
+        data.append(request_data)
         f.close()
         return jsonify(data)
         '''
