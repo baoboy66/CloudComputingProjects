@@ -66,7 +66,7 @@ def deleteRow(date):
             continue
         data.append(row)
     f.close()
-    f2 = open(file.csv, 'wb')
+    f2 = open('daily.csv', 'wb')
     writer = csv.writer(f2)
     writer.writerows(data)
     f2.close
