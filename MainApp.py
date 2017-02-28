@@ -9,10 +9,10 @@ def main():
 
 @app.route("/historical", methods=['GET'])
 def getDates():
+    data = []
     globalData = getData()
     for row in globalData:
-        temp = {'DATE':row[0]}
-        data.append(temp)
+        data.append(row[0])
     return jsonify(data)
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
@@ -21,8 +21,7 @@ def getInfo(date):
         globalData = getData()
         for row in globalData:
             if row[0] == date:
-                temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
-                return jsonify(temp)
+                return jsonify(row)
         return abort(404)
     elif request.method == 'DELETE':
         return "Delete Info"
