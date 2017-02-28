@@ -35,7 +35,7 @@ def getInfo(date):
             if row[0] == date:
                 temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
                 return jsonify(temp)
-        return "Error"
+        return abort(404)
     elif request.method == 'DELETE':
         return "Delete Info"
     return "NONE"
