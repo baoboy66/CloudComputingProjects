@@ -23,12 +23,12 @@ def getInfo(date):
         for row in globalData:
             if row['DATE'] == date:
                 return jsonify(row)
-        return abort(404, {'message': 'Unable to complete request: item doesn't exist'})
+        return abort(404, {'message': 'Unable to complete request: item does not exist'})
     elif request.method == 'DELETE':
         result = deleteRow(date)
         if result:
             return result
-        return abort(404, {'message': 'Unable to complete request: Can't delete non existing item.'})
+        return abort(404, {'message': 'Unable to complete request: Cannot delete non existing item.'})
 
 
 @app.route("/historical", methods=['POST'])
@@ -50,7 +50,7 @@ def addData():
         writer.writerows(data)
         f2.close
         return "Update Successfully"
-    abort(404, {'message': 'Unable to update info: item doesn't exist'}
+    abort(404, {'message': 'Unable to update info: item does not exist'}
 
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
