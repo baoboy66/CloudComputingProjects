@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, csv
 
 app = Flask(__name__)
 
@@ -9,11 +9,10 @@ def main():
 @app.route("/historical", methods=['GET'])
 def getDates():
     s = ""
-    import CSV
     f = open('daily.csv','rb')
     reader = CSV.reader(f)
     for row in reader:
-        s += row
+        s += str(row)
     return s
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
