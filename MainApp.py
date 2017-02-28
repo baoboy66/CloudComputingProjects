@@ -23,14 +23,10 @@ def getInfo(date):
         for row in globalData:
             if row['DATE'] == date:
                 return jsonify(row)
-        return abort(404)
     elif request.method == 'DELETE':
-        globalData = getData()
-        for row in globalData:
-            if row['DATE'] == date:
-                globalData.remove(row)
-                return "Delete Info Successful"
-        return abort(404)
+        result = deleteRow(date)
+        if result:
+            return result
     return abort(404)
 
 
@@ -61,6 +57,22 @@ def getData():
         data.append(temp)
     return data
 
+def deleteRow(date)
+    import csv
+    data = []
+    f = open('daily.csv','rb')
+    reader = csv.reader(f)
+    for row in reader:
+        if row[0] == date
+            continue
+        data.append(temp)
+    f.close()
+    f2 = open(file.csv, 'wb')
+    writer = csv.writer(f2)
+    writer.writerows(data)
+    f2.close
+    return "Delete Successfully"
+    
 '''    
 @app.errorHandler(404)
 def not_found(error):
