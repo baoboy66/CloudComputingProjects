@@ -16,7 +16,7 @@ def getDates():
         data.append(temp)
     return jsonify(data)
 
-@app.route("/historical/<date>", methods=['GET', 'DELETE'])
+@app.route("/historical/<int:date>", methods=['GET', 'DELETE'])
 def getInfo(date):
     if request.method == 'GET':
         globalData = getData()
@@ -57,7 +57,7 @@ def getData():
         temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
         globalData.append(temp)
     return globalData
-    
+
 '''    
 @app.errorHandler(404)
 def not_found(error):
