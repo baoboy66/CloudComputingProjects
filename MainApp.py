@@ -27,7 +27,7 @@ def getInfo(date):
     elif request.method == 'DELETE':
         globalData = getData()
         for row in globalData:
-            if row['DATE'] == date
+            if row['DATE'] == date:
                 globalData.remove(row)
                 return "Delete Info Successful"
         return abort(404)
