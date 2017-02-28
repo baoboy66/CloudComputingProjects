@@ -25,8 +25,12 @@ def getInfo(date):
                 return jsonify(row)
         return abort(404)
     elif request.method == 'DELETE':
-        return "Delete Info"
-    return "NONE"
+        globalData = getData()
+        for row in globalData:
+            if row['DATE'] == date
+                globalData.remove(row)
+        return "Weathr Info Deleted"
+    return abort(404)
 
 
 @app.route("/historical", methods=['POST'])
