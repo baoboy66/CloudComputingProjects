@@ -33,9 +33,24 @@ def getInfo(date):
 
 @app.route("/historical", methods=['POST'])
 def addData():
-    newData = request.data
-    globalData.append(newData)
-    return jsonify(globalData)
+    request_data = request.get_json()
+    if 'DATE' in request_data:
+        import csv
+        data = []
+        f = open('daily.csv','rb')
+        reader = csv.reader(f)
+        for row in reader:
+            if row[0] == request_data['DATE']:
+                row[1] = request_data['TMAX']
+                row[2] = request_data['TMIN']
+            data.append(row)
+        f.close()
+        f2 = open('daily.csv', 'wb')
+        writer = csv.writer(f2)
+        writer.writerows(data)
+        f2.close
+        return "Update Successfully"
+    abort(404, {'message': 'Unable to update info: item doesn't exist'}
 
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
