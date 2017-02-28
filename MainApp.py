@@ -12,7 +12,11 @@ def getDates():
     f = open('daily.csv','rb')
     reader = csv.reader(f)
     data = []
+    firstLine = True
     for row in reader:
+        if firstLine :
+            firstLine = False
+            continue
         temp = {'DATE':row[0]}
         data.append(temp)
     return jsonify(data)
