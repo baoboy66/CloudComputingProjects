@@ -23,7 +23,7 @@ def getInfo(date):
         for row in globalData:
             if row['DATE'] == date:
                 return jsonify(row)
-        return abort(404, {'message': 'Unable to complete request: '+date+' doesn't exist'})
+        return abort(404, {'message': 'Unable to complete request: item doesn't exist'})
     elif request.method == 'DELETE':
         result = deleteRow(date)
         if result:
