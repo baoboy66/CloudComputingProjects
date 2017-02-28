@@ -24,10 +24,18 @@ def getDates():
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo(date):
     if request.method == 'GET':
-        data = getData()
-        for i in data:
-            if i[0] == date:
-                return ['DATE':i[0], 'TMAX':i[1], 'TMIN':i[2]]
+        import csv
+        f = open('daily.csv','rb')
+        reader = csv.reader(f)
+        firstLine = True
+        for row in reader:
+            if firstLine :
+                firstLine = False
+                continue
+            if row[0] == date:
+                temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
+                return jsonify(temp)
+        return "Error"
     elif request.method == 'DELETE':
         return "Delete Info"
     return "NONE"
@@ -52,8 +60,9 @@ def getData():
         if firstLine :
             firstLine = False
             continue
-        data.append(row)
-    return data
+        temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]])
+        data.append(temp)
+    return jsonify(data)
     
 '''    
 @app.errorHandler(404)
