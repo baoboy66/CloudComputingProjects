@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, abort, make_response
 
+globalData = []
 app = Flask(__name__)
 
 @app.route('/')
@@ -19,7 +20,7 @@ def getDates():
             continue
         temp = {'DATE':row[0]}
         data.append(temp)
-    return jsonify(data)
+    return jsonify(globalData)
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo(date):
@@ -49,6 +50,24 @@ def addData():
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
+    
+if __name__ == "__main__":
+  app.run()
+  globalData = getData()
+  
+def getData():
+    import csv
+    data = []
+    f = open('daily.csv','rb')
+    reader = csv.reader(f)
+    firstLine = True
+    for row in reader:
+        if firstLine :
+            firstLine = False
+            continue
+        temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
+        data.append(temp)
+    return data
     
 '''    
 @app.errorHandler(404)
