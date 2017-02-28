@@ -7,7 +7,7 @@ app = Flask(__name__)
 def main():
     return "Hello!"
 
-@app.route("/historical", methods=['GET'])
+@app.route("/historical/", methods=['GET'])
 def getDates():
     data = []
     globalData = getData()
@@ -31,10 +31,10 @@ def getInfo(date):
         return abort(404, {'message': 'Unable to complete request: Cannot delete non existing item.'})
 
 
-@app.route("/historical", methods=['POST'])
+@app.route("/historical/", methods=['POST'])
 def addData():
     request_data = request.get_json()
-    if 'DATE' in request_data:
+    try:
         import csv
         data = []
         f = open('daily.csv','rb')
@@ -48,7 +48,8 @@ def addData():
         writer.writerows(data)
         f2.close
         return "Update Successfully"
-    return abort(404, {'message': 'Unable to update info: item does not exist'})
+    except:
+        return abort(404, {'message': 'Unable to update info: item does not exist'})
 
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
