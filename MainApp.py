@@ -39,19 +39,16 @@ def addData():
         data = []
         f = open('daily.csv','rb')
         reader = csv.reader(f)
-        temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
         for row in reader:
             data.append(row)
-        data.append(request_data)
+        temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
+        data.append(temp)
         f.close()
-        return jsonify(data)
-        '''
         f2 = open('daily.csv', 'wb')
         writer = csv.writer(f2)
         writer.writerows(data)
         f2.close()
         return "Update Successfully"
-        '''
     except:
         return abort(404, {'message': 'Unable to update info: item does not exist'})
 
