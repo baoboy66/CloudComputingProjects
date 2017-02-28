@@ -47,6 +47,7 @@ def getData():
     if len(globalData) > 0:
         return globalData
     import csv
+    data = []
     f = open('daily.csv','rb')
     reader = csv.reader(f)
     firstLine = True
@@ -55,8 +56,8 @@ def getData():
             firstLine = False
             continue
         temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
-        globalData.append(temp)
-    return globalData
+        data.append(temp)
+    return data
 
 '''    
 @app.errorHandler(404)
