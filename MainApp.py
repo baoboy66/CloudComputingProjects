@@ -16,7 +16,7 @@ def getDates():
     for row in reader:
         temp = {'DATE':row[0]}
         data.append(temp)
-    return json.dumps(data)
+    return jsonify(data)
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo():
