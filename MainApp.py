@@ -16,7 +16,7 @@ def getDates():
         data.append(temp)
     return jsonify(data)
 
-@app.route("/historical/<int:date>", methods=['GET', 'DELETE'])
+@app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo(date):
     if request.method == 'GET':
         globalData = getData()
