@@ -45,7 +45,6 @@ def forecast():
   
 def getData():
     if len(globalData) > 0:
-        print "current data"
         return globalData
     import csv
     data = []
