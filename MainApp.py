@@ -8,8 +8,12 @@ def main():
 
 @app.route("/historical", methods=['GET'])
 def getDates():
-    loadData()
-    return "Dates"
+    s = ""
+    f = open('daily.csv','rb')
+    reader = CSV.reader(f)
+    for row in reader:
+        s += row
+    return s
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo():
@@ -28,13 +32,6 @@ def addData():
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
-
-def loadData():
-    f = open('daily.csv','rt')
-    reader = csv.reader(f)
-    for row in reader:
-        print row
-    f.close()
 
 if __name__ == '__main__':
     app.run(
