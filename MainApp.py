@@ -9,30 +9,17 @@ def main():
 
 @app.route("/historical", methods=['GET'])
 def getDates():
-    import csv
-    f = open('daily.csv','rb')
-    reader = csv.reader(f)
-    data = []
-    firstLine = True
-    for row in reader:
-        if firstLine :
-            firstLine = False
-            continue
+    globalData = getData()
+    for row in globalData:
         temp = {'DATE':row[0]}
         data.append(temp)
-    return jsonify(globalData)
+    return jsonify(data)
 
 @app.route("/historical/<date>", methods=['GET', 'DELETE'])
 def getInfo(date):
     if request.method == 'GET':
-        import csv
-        f = open('daily.csv','rb')
-        reader = csv.reader(f)
-        firstLine = True
-        for row in reader:
-            if firstLine :
-                firstLine = False
-                continue
+        globalData = getData()
+        for row in globalData:
             if row[0] == date:
                 temp = {'DATE':row[0], 'TMAX':row[1], 'TMIN':row[2]}
                 return jsonify(temp)
@@ -50,12 +37,10 @@ def addData():
 @app.route("/forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
-    
-if __name__ == "__main__":
-  app.run()
-  globalData = getData()
   
 def getData():
+    if len(globalData) > 0:
+        return globalData
     import csv
     data = []
     f = open('daily.csv','rb')
