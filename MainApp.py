@@ -1,4 +1,4 @@
-from flask import Flask, CSV, request
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -9,6 +9,7 @@ def main():
 @app.route("/historical", methods=['GET'])
 def getDates():
     s = ""
+    import CSV
     f = open('daily.csv','rb')
     reader = CSV.reader(f)
     for row in reader:
@@ -33,8 +34,3 @@ def addData():
 def forecast():
     return "FORECAST DATA"
 
-if __name__ == '__main__':
-    app.run(
-        host = '0.0.0.0',
-        port = 80
-    )
