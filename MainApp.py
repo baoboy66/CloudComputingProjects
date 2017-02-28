@@ -29,7 +29,8 @@ def getInfo(date):
         for row in globalData:
             if row['DATE'] == date
                 globalData.remove(row)
-        return "Weathr Info Deleted"
+                return "Delete Info Successful"
+        return abort(404)
     return abort(404)
 
 
@@ -44,6 +45,7 @@ def forecast():
   
 def getData():
     if len(globalData) > 0:
+        print "current data"
         return globalData
     import csv
     data = []
