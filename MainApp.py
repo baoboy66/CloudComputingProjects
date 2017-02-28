@@ -2,7 +2,7 @@ from flask import Flask, #request, CSV
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def main():
     return "Hello!"
 
@@ -12,12 +12,12 @@ def getDates():
 
 @app.route("historical/<date>", methods=['GET'])
 def getInfo():
-    return "GET INFO";
+    return "GET INFO"
 
 
 @app.route("/historical", methods=['POST'])
 def addData():
-    return "POST ADD DATA";
+    return "POST ADD DATA"
 
 @app.route("historical/<date>", methods=['DELETE'])
 def deleteData():
