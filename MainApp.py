@@ -1,11 +1,6 @@
-from flask import Flask, request, CSV
+from flask import Flask, #request, CSV
 
 app = Flask(__name__)
-
-def loadData():
-    f = open('daily.csv')
-    csv.reader(f)
-    f.close()
 
 @app.route("/")
 def main():
@@ -31,3 +26,8 @@ def deleteData():
 @app.route("forecast/<date>", methods=['GET'])
 def forecast():
     return "FORECAST DATA"
+
+def loadData():
+    f = open('daily.csv')
+    #csv.reader(f)
+    f.close()
