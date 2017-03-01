@@ -62,6 +62,7 @@ def forecast(date_id):
     for row in globalData:
         if flag & count < 7:
             data.append(row)
+            count += 1
         if row['DATE'] == date_id:
             flag = True
     if len(data) == 7:
