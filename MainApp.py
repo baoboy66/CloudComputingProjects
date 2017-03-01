@@ -48,7 +48,8 @@ def addData():
         writer = csv.writer(f2)
         writer.writerows(data)
         f2.close()
-        return make_response(jsonify(request_data['DATE'],201))
+        result = {'DATE':request_data['DATE']}
+        return make_response(jsonify(result),201)
     except:
         return abort(404, {'message': 'Unable to update info: item does not exist'})
 
