@@ -39,12 +39,17 @@ def addData():
         data = []
         f = open('daily.csv','rb')
         reader = csv.reader(f)
+        found = False
         for row in reader:
             if row[0] == request_data['DATE']:
                 temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
                 data.append(temp)
+                found = True
             else:
                 data.append(row)
+        if not found:
+            temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
+            data.append(temp)
         f.close()
         f2 = open('daily.csv', 'wb')
         writer = csv.writer(f2)
