@@ -52,8 +52,19 @@ def addData():
     except:
         return abort(404, {'message': 'Unable to update info: item does not exist'})
 
-@app.route("/forecast/<date>", methods=['GET'])
-def forecast():
+@app.route("/forecast/<date_id>", methods=['GET'])
+def forecast(date_id):
+    # get the forecast for existing dates
+    globalData = getData()
+    data = []
+    count = 0
+    flag = False
+    for row in globalData:
+        if flag & count < 7:
+            data.append(row)
+        if row['DATE'] == date:
+            flag = True
+        return jsonify(data)
     return "FORECAST DATA"
   
 def getData():
