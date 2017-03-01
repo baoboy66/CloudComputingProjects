@@ -62,10 +62,11 @@ def forecast(date_id):
     for row in globalData:
         if flag & count < 7:
             data.append(row)
-        if row['DATE'] == date:
+        if row['DATE'] == date_id:
             flag = True
+    if len(data) == 7:
         return jsonify(data)
-    return "FORECAST DATA"
+    return abort(404)
   
 def getData():
     if len(globalData) > 0:
