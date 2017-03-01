@@ -40,7 +40,7 @@ def addData():
         f = open('daily.csv','rb')
         reader = csv.reader(f)
         for row in reader:
-            if row[0] == request_data['DATE']
+            if row[0] == request_data['DATE']:
                 temp = [request_data['DATE'],request_data['TMAX'],request_data['TMIN']]
                 data.append(temp)
             else:
