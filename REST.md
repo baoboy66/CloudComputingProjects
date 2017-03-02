@@ -6,7 +6,7 @@
 ##Getting all dates
 * ###Description:
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
-* **URL: ** /historical/
+* **URL:** /historical/
 * **Method:** GET
 * **Parameters**: None
 * **Examples of API calls:**
