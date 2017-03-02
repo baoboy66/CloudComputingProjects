@@ -9,7 +9,7 @@ You can call all dates that have data. API responds with a list of json results 
 * **URL:** /historical/
 * **Method:** GET
 * **Parameters**: None
-* **Examples of API calls:**
+* **Examples of API calls:** <br>
   GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/*
 * **Success Response:** 
  * **Code:** 200
@@ -24,7 +24,7 @@ You can get the weather data by date. API will responds with exact result.
 * **Parameters**: 
  * **id**  Date
  * **type** DateTime(YYYYMMDD)
-* **Examples of API calls:**
+* **Examples of API calls:** <br>
   GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/20130102/*
 * **Success Response:** 
  * **Code:** 200
@@ -40,7 +40,7 @@ You can add/update the weather data for a specific date. API will update the res
 * **Parameters**: 
  * **id**  data {"DATE":"20130101","TMAX": 34.0,"TMIN":26.0}
  * **type** JSON(application/json)
-* **Examples of API calls:**
+* **Examples of API calls:** <br>
   POST | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/*
 * **Success Response:** 
  * **Code:** 200
