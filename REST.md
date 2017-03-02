@@ -3,7 +3,7 @@
 
 #Call to weather data
 ### Root URL: <br>
- #### ec2-52-37-173-114.us-west-2.compute.amazonaws.com/
+[**ec2-52-37-173-114.us-west-2.compute.amazonaws.com/**](http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/)
 ##Getting Historical Dates
 * **Description:**
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
