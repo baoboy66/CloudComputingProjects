@@ -11,7 +11,10 @@ You can call all dates that have data. API responds with a list of json results 
 * **Parameters**: None
 * **Examples of API calls:**
   *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/*
-
+* **Success Response:** 
+* **Code:** 200
+* **Error Response:**
+* **Code:** 404
 
 ##Getting weather data:
 ###Description:
