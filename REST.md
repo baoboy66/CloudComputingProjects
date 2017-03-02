@@ -20,7 +20,7 @@ You can call all dates that have data. API responds with a list of json results 
 ##Getting weather data **by Date**:
 ###Description:
 You can get the weather data by date. API will responds with exact result.
-* **URL:** /historical/<dateYYYYMMDD>
+* **URL:** /historical/<<dateYYYYMMDD>>
 * **Method:** GET
 * **Parameters**: 
  * **id**  Date
@@ -50,7 +50,7 @@ You can **add/update** the weather data for a specific date. API will update the
 ##Deleting weather data by Date:
 ###Description:
 You can **delete** the weather data for a specific date. API will update the results.
-* **URL:** /historical/<dateYYYYMMDD>
+* **URL:** /historical/<<dateYYYYMMDD>>
 * **Method:** DELETE
 * **Parameters**: 
  * **id**  date
@@ -66,7 +66,7 @@ You can **delete** the weather data for a specific date. API will update the res
 ##Getting weather forecast data by Date:
 ###Description:
 You can **get** the weather data of by date of existing data for the next 7 days. API will responds with exact results.
-* **URL:** /forecast/<dateYYYYMMDD>
+* **URL:** /forecast/<<dateYYYYMMDD>>
 * **Method:** GET
 * **Parameters**: 
  * **id**  Date
