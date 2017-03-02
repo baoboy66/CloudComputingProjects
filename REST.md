@@ -31,10 +31,9 @@ You can get the weather data by date. API will responds with exact result.
 * **Error Response:**
  * **Code:** 404
 
-
 ##Posting weather data:
 ###Description:
-You can add/update the weather data for a specific date. API will update the results.
+You can **add/update** the weather data for a specific date. API will update the results.
 * **URL:** /historical/
 * **Method:** POST
 * **Parameters**: 
@@ -47,3 +46,17 @@ You can add/update the weather data for a specific date. API will update the res
 * **Error Response:**
  * **Code:** 404
 
+##Deleting weather data by Date:
+###Description:
+You can **delete** the weather data for a specific date. API will update the results.
+* **URL:** /historical/<dateYYYYMMDD>
+* **Method:** DELETE
+* **Parameters**: 
+ * **id**  date
+ * **type** DateTime(YYYYMMDD)
+* **Examples of API calls:** <br>
+  * DELETE | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/<dateYYYYMMDD>* 
+* **Success Response:** 
+ * **Code:** 200
+* **Error Response:**
+ * **Code:** 404
