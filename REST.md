@@ -65,7 +65,7 @@ You can **delete** the weather data for a specific date. API will update the res
 
 ##Getting weather forecast data by Date:
 ###Description:
-You can **get** the weather data by date for the next 7 days. API will responds with exact results.
+You can **get** the weather data of by date of existing data for the next 7 days. API will responds with exact results.
 * **URL:** /forecast/<dateYYYYMMDD>
 * **Method:** GET
 * **Parameters**: 
