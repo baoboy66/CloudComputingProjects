@@ -7,9 +7,12 @@
 * ###Description:
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
 * **URL**
-* ###Parameters:
+* **Method:**
+  <_The request type_>
+  'GET'
+* **Parameters**:
 
-* ####Examples of API calls:
+* **Examples of API calls:**
 
 
 ##Getting weather data:
