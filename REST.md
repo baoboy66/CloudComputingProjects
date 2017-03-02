@@ -4,11 +4,11 @@
 #Call to weather data
 
 ##Getting all dates
-###Description:
+* ###Description:
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
-###Parameters:
+* ###Parameters:
 
-####Examples of API calls:
+* ####Examples of API calls:
 
 
 ##Getting weather data:
