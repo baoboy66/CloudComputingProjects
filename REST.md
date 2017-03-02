@@ -4,7 +4,7 @@
 #Call to weather data
 
 ##Getting all dates
-* ###Description:
+* **Description:**
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
 * **URL:** /historical/
 * **Method:** GET
