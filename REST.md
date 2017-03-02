@@ -60,3 +60,19 @@ You can **delete** the weather data for a specific date. API will update the res
  * **Code:** 200
 * **Error Response:**
  * **Code:** 404
+
+
+##Getting weather forecast data by Date:
+###Description:
+You can **get** the weather data by date for the next 7 days. API will responds with exact results.
+* **URL:** /forecast/<dateYYYYMMDD>
+* **Method:** GET
+* **Parameters**: 
+ * **id**  Date
+ * **type** DateTime(YYYYMMDD)
+* **Examples of API calls:** <br>
+  * GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/forecast/20130102/*
+* **Success Response:** 
+ * **Code:** 200
+* **Error Response:**
+ * **Code:** 404
