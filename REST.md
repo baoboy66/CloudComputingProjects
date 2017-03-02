@@ -12,7 +12,7 @@ You can call all dates that have data. API responds with a list of json results 
 * **Examples of API calls:** <br>
   * GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/*
 * **Success Response:** 
- * **Code:** 200
+ * **Code:** 200 OK
 * **Error Response:**
  * **Code:** 404
 
@@ -27,9 +27,9 @@ You can get the weather data by date. API will responds with exact result.
 * **Examples of API calls:** <br>
   * GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/20130102/*
 * **Success Response:** 
- * **Code:** 200
+ * **Code:** 200 OK
 * **Error Response:**
- * **Code:** 404
+ * **Code:** 404 NOT FOUND
 
 ##Posting weather data:
 ###Description:
@@ -42,9 +42,9 @@ You can **add/update** the weather data for a specific date. API will update the
 * **Examples of API calls:** <br>
   * POST | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/* | {"DATE":"20130101","TMAX": 34.0,"TMIN":26.0}
 * **Success Response:** 
- * **Code:** 201
+ * **Code:** 201 CREATED
 * **Error Response:**
- * **Code:** 404
+ * **Code:** 405 METHOD NOT ALLOWED
 
 ##Deleting weather data by Date:
 ###Description:
@@ -57,9 +57,9 @@ You can **delete** the weather data for a specific date. API will update the res
 * **Examples of API calls:** <br>
   * DELETE | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/<dateYYYYMMDD>* 
 * **Success Response:** 
- * **Code:** 200
+ * **Code:** 200 OK
 * **Error Response:**
- * **Code:** 404
+ * **Code:** 404 NOT FOUND
 
 
 ##Getting weather forecast data by Date:
@@ -73,6 +73,6 @@ You can **get** the weather data by date for the next 7 days. API will responds 
 * **Examples of API calls:** <br>
   * GET | *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/forecast/20130102/*
 * **Success Response:** 
- * **Code:** 200
+ * **Code:** 200 OK
 * **Error Response:**
- * **Code:** 404
+ * **Code:** 404 NOT FOUND
