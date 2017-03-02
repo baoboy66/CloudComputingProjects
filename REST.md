@@ -6,13 +6,11 @@
 ##Getting all dates
 * ###Description:
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
-* **URL**
-* **Method:**
-  <_The request type_>
-  'GET'
-* **Parameters**:
-
+* **URL: ** /historical/
+* **Method:** GET
+* **Parameters**: None
 * **Examples of API calls:**
+  *ec2-52-37-173-114.us-west-2.compute.amazonaws.com/historical/*
 
 
 ##Getting weather data:
