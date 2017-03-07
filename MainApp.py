@@ -27,7 +27,7 @@ def getInfo(date):
     elif request.method == 'DELETE':
         result = deleteRow(date)
         if result:
-            return result
+            return result, 204
         return abort(404, {'message': 'Unable to complete request: Cannot delete non existing item.'})
 
 
