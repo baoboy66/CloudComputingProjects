@@ -66,6 +66,7 @@ def forecast(date_id):
     globalData = getData()
     data = []
     count = 0
+    '''
     flag = False
     for row in globalData:
         if row['DATE'] == date_id:
@@ -73,6 +74,12 @@ def forecast(date_id):
         if flag and count < 7:
             data.append(row)
             count += 1
+    '''
+    while count < 7:
+        date = int(date_id) + count
+        temp = {'DATE':date, 'TMAX':randint(0,100), 'TMIN':randint(0,50)}
+        data.append(row)
+        count += 1
     if len(data) > 0:
         return jsonify(data)
     return abort(404, {'Message':'No data found for the next 7 days'})
