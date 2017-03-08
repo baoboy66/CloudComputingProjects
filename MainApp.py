@@ -78,8 +78,8 @@ def forecast(date_id):
     '''
     while count < 7:
         date = int(date_id) + count
-        temp = {'DATE':date, 'TMAX':randint(0,100), 'TMIN':randint(0,50)}
-        data.append(row)
+        temp = {'DATE':str(date), 'TMAX':randint(0,100), 'TMIN':randint(0,50)}
+        data.append(temp)
         count += 1
     if len(data) > 0:
         return jsonify(data)
