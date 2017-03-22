@@ -3,16 +3,27 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
+function plotData(dates, tmax, tmin){
+
+}
 function loadDoc() {
  var date = $('#dateid').val()
  var myUrl = "http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/forecast/"
  myUrl += date
- $.ajax({  
+ var dates, tmax, tmin; 
+$.ajax({  
        type: "GET",  
        url: myUrl, 	   
         
-       success: function(resp){  
-		alert("success")
+       success: function(resp){ 
+		for(var key in resp){
+			dates = resp[key].DATE;
+			tmax = resp[key].TMAX;
+			tmin = resp[key].TMIN;
+		} 
+		respString = JSON.stringify(resp);
+		document.getElementById("view").innerHTML = respString;
+		plotData(dates,tmax,tmin);
        },  
        error: function(e){    
        }  
@@ -22,17 +33,12 @@ function loadDoc() {
 </head>
 <body>
 <h1>Weather Service</h1>
-<form>
-  <table>
-  <tr>
-    <td>
-    	Date: <input type="text" id="dateid">
-    </td>
-  </tr>
-</table>
+<div>
+	Date: <input type="text" id="dateid">
 <input type="submit" onclick="loadDoc()" value="Submit">
-</form>
-
+</div>
+<div id="view">
+</div>
 
 </body>
 </html>
