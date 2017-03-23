@@ -21,8 +21,6 @@
        type: "GET",  
        url: myUrl, 	         
        success: function(resp){ 
-		respString = JSON.stringify(resp);
-		document.getElementById("view").innerHTML = respString;
 		var dataSet = [];
 		dataSet[0] = ['Date', 'TMAX', 'TMIN'];
 		for(var key = 0; key < resp.length; key++){
@@ -31,7 +29,7 @@
 		drawChart(dataSet, 'mychart');
        },  
        error: function(e){  
-		document.getElementById("view").innerHTML = "Error Occur!";
+		alert("Error: Input field is empty or dataType is incorrect!");
        }  
     });
 }
