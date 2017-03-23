@@ -1,7 +1,7 @@
-  function drawChart(dataSet, chartView) {
+  function drawChart(dataSet, chartView, name) {
 	var plotData = google.visualization.arrayToDataTable(dataSet);
 	var options = {
-	  title: 'Weather Forecast',
+	  title: name,
 	  curveType: 'function',
 	  legend: { position: 'bottom'},
 	  vAxis: {title: 'Temperature'}
@@ -26,7 +26,7 @@
 		for(var key = 0; key < resp.length; key++){
 			dataSet[key+1] = [resp[key].DATE, resp[key].TMAX, resp[key].TMIN];
 		}
-		drawChart(dataSet, 'mychart');
+		drawChart(dataSet, 'mychart','My Weather Forecast');
        },  
        error: function(e){  
 		alert("Error: Input field is empty or dataType is incorrect!");
@@ -46,7 +46,7 @@ function yahooWeather() {
 		for(var key = 0; key < forecast.length; key++){
 			dataSet[key+1] = [forecast[key].date, parseInt(forecast[key].high), parseInt(forecast[key].low)];
 		}
-		drawChart(dataSet, 'yahoochart');
+		drawChart(dataSet, 'yahoochart', 'Yahoo Weather Forecast for Cincinnati, OH');
        },  
        error: function(e){  
 		alert("Error Occur!");
