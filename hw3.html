@@ -9,25 +9,22 @@
 </script>
 </head>
 <body>
-<h1>Weather Service</h1>
-<div>
-	<table>
-		<tr>
-			<td>
-			Date: <input type="text" id="dateid">
-			<input type="submit" onclick="loadDoc()" value="Submit">
-			</td>
-			<td>
-			<p>Get Yahoo Weather Forecast</p>
-			<input type="submit" onclick="yahooWeather()" value="Submit">
-			</td>
-		</tr>
-	</table>
-</div>
-<div id="view">
-</div>
-</br>
-<div id="curve_chart" style="width: 900px; height: 500px"></div>
-
+	<h1>Weather Service</h1>
+	<div>
+		<table>
+			<tr>
+				<td style="width: 700px">
+					Date: <input type="text" id="dateid">
+					<input type="submit" onclick="loadDoc()" value="Submit">
+					<div id="mychart" style="width: 700px; height: 500px"></div>
+				</td>
+				<td style="width: 700px">
+					<p>Get Yahoo Weather Forecast</p>
+					<input type="submit" onclick="yahooWeather()" value="Submit">
+					<div id="yahoochart" style="width: 700px; height: 500px"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
