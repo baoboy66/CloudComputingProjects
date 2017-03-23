@@ -2,32 +2,10 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src = "weatherJS.js"></script>
-
-<script>
-function test() {
- var date = $('#dateid').val()
- var myUrl = "http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/forecast/"
- myUrl += date
- var dates, tmax, tmin; 
-$.ajax({  
-       type: "GET",  
-       url: myUrl, 	   
-        
-       success: function(resp){ 
-		for(var key in resp){
-			dates = resp[key].DATE;
-			tmax = resp[key].TMAX;
-			tmin = resp[key].TMIN;
-		} 
-		respString = JSON.stringify(resp);
-		document.getElementById("view").innerHTML = respString;
-		plotData(dates,tmax,tmin);
-       },  
-       error: function(e){    
-       }  
-     });
-}
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="/static/weatherJS.js"></script>
+<script> 
+	google.charts.load('current', {'packages':['corechart']});
 </script>
 </head>
 <body>

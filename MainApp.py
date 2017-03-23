@@ -5,8 +5,8 @@ globalData = []
 app = Flask(__name__)
 
 @app.route('/')
-def main():
-    return "Hello!"
+def main(): 
+    return open("hw3.html","r").read()
 
 @app.route("/historical/", methods=['GET'])
 def getDates():
@@ -69,7 +69,7 @@ def forecast(date_id):
     count = 0
     while count < 7:
         date = int(date_id) + count
-        temp = {'DATE':str(date), 'TMAX':randint(0,100), 'TMIN':randint(0,50)}
+        temp = {'DATE':str(date), 'TMAX':randint(51,100), 'TMIN':randint(0,50)}
         data.append(temp)
         count += 1
     if len(data) > 0:
