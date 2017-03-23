@@ -4,6 +4,9 @@
 #Call to weather data
 ### Root URL: <br>
 [**ec2-52-37-173-114.us-west-2.compute.amazonaws.com/**](http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/)
+** On this page **
+* You can see the forecast for the next 10 days using the Yahoo Weather Service.
+
 ##Getting Historical Dates
 * **Description:**
 You can call all dates that have data. API responds with a list of json results that includes all the dates.
