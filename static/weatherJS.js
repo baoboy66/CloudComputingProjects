@@ -1,4 +1,4 @@
-  function drawChart(dataSet) {
+  function drawChart(dataSet, chartView) {
 	var plotData = google.visualization.arrayToDataTable(dataSet);
 	var options = {
 	  title: 'Weather Forecast',
@@ -7,7 +7,7 @@
 	  vAxis: {title: 'Temperature'}
 	};
 
-	var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+	var chart = new google.visualization.LineChart(document.getElementById(chartView));
 	
 	chart.draw(plotData, options);
   }
@@ -28,7 +28,7 @@
 		for(var key = 0; key < resp.length; key++){
 			dataSet[key+1] = [resp[key].DATE, resp[key].TMAX, resp[key].TMIN];
 		}
-		drawChart(dataSet);
+		drawChart(dataSet, 'mychart');
        },  
        error: function(e){  
 		document.getElementById("view").innerHTML = "Error Occur!";
@@ -48,7 +48,7 @@ function yahooWeather() {
 		for(var key = 0; key < forecast.length; key++){
 			dataSet[key+1] = [forecast[key].date, parseInt(forecast[key].high), parseInt(forecast[key].low)];
 		}
-		drawChart(dataSet);
+		drawChart(dataSet, 'yahoochart');
        },  
        error: function(e){  
 		document.getElementById("view").innerHTML = "Error Occur!";
