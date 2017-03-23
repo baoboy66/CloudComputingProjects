@@ -11,13 +11,18 @@
 <body>
 <h1>Weather Service</h1>
 <div>
-	<p>Get Yahoo Weather Forecast</p>
-	<input type="submit" onclick="yahooWeather()" value="Submit">
-</div>
-
-<div>
-	Date: <input type="text" id="dateid">
-<input type="submit" onclick="loadDoc()" value="Submit">
+	<table>
+		<tr>
+			<td>
+			Date: <input type="text" id="dateid">
+			<input type="submit" onclick="loadDoc()" value="Submit">
+			</td>
+			<td>
+			<p>Get Yahoo Weather Forecast</p>
+			<input type="submit" onclick="yahooWeather()" value="Submit">
+			</td>
+		</tr>
+	</table>
 </div>
 <div id="view">
 </div>

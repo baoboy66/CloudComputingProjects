@@ -46,7 +46,7 @@ function yahooWeather() {
 	   	var dataSet = [];
 		dataSet[0] = ['Date', 'TMAX', 'TMIN'];
 		for(var key = 0; key < forecast.length; key++){
-			dataSet[key+1] = [forecast[key].date, forecast[key].high, forecast[key].low];
+			dataSet[key+1] = [forecast[key].date, parseInt(forecast[key].high), parseInt(forecast[key].low)];
 		}
 		drawChart(dataSet);
        },  
