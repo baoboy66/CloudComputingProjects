@@ -3,10 +3,10 @@
 
 # RUN APP USING DOCKER IMAGE
 ###Load the docker image
-[root]:docker load -i <dockerimage>.tar
+[root]:docker load -i Bao_Do_Image.tar
 <br> 
 ###Run image
-[root]:docker run -d -p 8081:80 <dockerimage>
+[root]:docker run -d -p 8081:80 mydocker
 <br>
 ###Website should be running on on port 8081
 
