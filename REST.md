@@ -5,8 +5,9 @@
 ### Load the docker image
 * >> docker load -i <dockerimage>.tar
 <br>
-### Run image
+###Run image
 * >> docker run -d -p 8081:80 <dockerimage>
+* <br>
 ### Website should be running on on port 8081
 
 #Call to weather data
