@@ -2,12 +2,12 @@
 #Cloud Computing homework2
 
 # RUN APP USING DOCKER IMAGE
-### Load the docker image
+###Load the docker image
 * >> docker load -i <dockerimage>.tar
 <br>
 ###Run image
 * >> docker run -d -p 8081:80 <dockerimage>
-* <br>
+<br>
 ### Website should be running on on port 8081
 
 #Call to weather data
