@@ -1,6 +1,13 @@
 # CC_HW2
 #Cloud Computing homework2
 
+# RUN APP USING DOCKER IMAGE
+### Load the docker image
+* >> docker load -i <dockerimage>.tar
+### Run image
+* >> docker run -d -p 8081:80 <dockerimage>
+### Website should be running on on port 8081
+
 #Call to weather data
 ### Root URL: <br>
 [**ec2-52-37-173-114.us-west-2.compute.amazonaws.com/**](http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/)
