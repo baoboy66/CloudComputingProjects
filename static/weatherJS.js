@@ -14,7 +14,7 @@
   
   function loadDoc() {
 	var date = $('#dateid').val()
-	var myUrl = "http://ec2-52-37-173-114.us-west-2.compute.amazonaws.com/forecast/"
+	var myUrl = window.location.href + "forecast/"
 	myUrl += date
 	var dates, tmax, tmin; 
 	$.ajax({  
